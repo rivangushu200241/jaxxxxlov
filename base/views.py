@@ -35,9 +35,9 @@ def upload_image(request):
             image = image
         )
         obj.save()
-        # form = ImageUploadForm(request.POST,request.FILES)
-        # if form.is_valid():
-        #     form.save()
+        form = ImageUploadForm(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
         messages.success(request, 'Image has been successfully uploaded.')
         return redirect('home')
 
